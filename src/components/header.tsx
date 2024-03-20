@@ -15,11 +15,9 @@ const Header = (props: HeaderProps) => {
   return (
     <header>
       <div className="backContainer">
-        {notHome && <img src={backSvg} onClick={handleClick} alt="Home button" />}
+        {notHome && <a onClick={handleClick}><img src={backSvg} alt="Home button" /></a>}
       </div>
-      <h1 onClick={handleClick}>
-        Magic: The Gathering Dragons
-      </h1>
+      <h1>Magic: The Gathering Dragons</h1>
       <div className="headerRight" />
     </header>
   )

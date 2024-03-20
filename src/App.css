@@ -10,6 +10,7 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  gap: 5vw;
   width: 100%;
   font-size: calc(10px + 2vmin);
 }
@@ -23,31 +24,29 @@ main {
   width: 100%;
 }
 
-a {
-  color: var(--link-color);
-}
-
 p {
   margin: 0;
 }
 
-header h1 {
-  cursor: pointer;
-}
-
 .backContainer {
-  height: 50px;
-  width: 50px;
+  height: 4rem;
+  width: 4rem;
 }
 
-.backContainer img {
-  width: 100%;
+.backContainer a, .backContainer a img {
   height: 100%;
+  width: 100%;
   cursor: pointer;
 }
 
 .headerRight {
-  width: 50px;
+  width: 4rem;
+}
+
+@media (max-width: 768px) {
+  .headerRight {
+    display: none;
+  }
 }
 
 ul.cards {
@@ -104,10 +103,17 @@ ul.cards {
   section {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     gap: 20px;
     width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    section {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
   
   section img {
@@ -119,7 +125,7 @@ ul.cards {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    width: 100%;
+    flex-grow: 1;
   }
 
   .detailsText h2 {

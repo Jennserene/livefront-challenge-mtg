@@ -1,6 +1,8 @@
+import { ReactNode } from "react"
+
 interface ListItemProps {
   label: string
-  value: string | number
+  value: ReactNode
 }
 
 const ListItem = (props: ListItemProps) => {  

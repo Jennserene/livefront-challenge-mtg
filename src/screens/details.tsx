@@ -2,6 +2,8 @@ import { useEffect } from "react"
 import Rulings from "../components/rulings"
 import { MtgCard } from "../types/card"
 import ListItem from "../components/listItem"
+import { replaceMtgSymbols } from "../utils/manaFont"
+import useExternalCss from "../hooks/useExternalCss"
 
 interface DetailsProps {
   card: MtgCard
@@ -9,20 +11,24 @@ interface DetailsProps {
 
 const Details = (props: DetailsProps) => {
   const { card } = props
+  useExternalCss('css/mana.css')
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
+  const manaCost = replaceMtgSymbols(card.manaCost)
+  const cardText = replaceMtgSymbols(card.text, {cast: true})
+
   const attributes = {
-    "Mana Cost": card.manaCost,
+    "Mana Cost": manaCost,
     "Converted Mana Cost": card.cmc,
     "Colors": card.colors.join(", "),
     "Color Identity": card.colorIdentity.join(", "),
     "Type": card.type,
     "Rarity": card.rarity,
     "Set": card.set,
-    "Text": card.text,
+    "Text": cardText,
     "Artist": card.artist,
     "Number": card.number,
     "Power": card.power,

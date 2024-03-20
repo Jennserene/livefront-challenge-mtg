@@ -20,23 +20,142 @@ main {
   align-items: center;
   justify-content: center;
   flex: 1;
-  padding: 20px;
+  width: 100%;
 }
 
 a {
   color: var(--link-color);
 }
 
-div.backContainer {
+p {
+  margin: 0;
+}
+
+header h1 {
+  cursor: pointer;
+}
+
+.backContainer {
   height: 50px;
   width: 50px;
 }
 
-div.backContainer img {
+.backContainer img {
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
-div.headerRight {
+.headerRight {
   width: 50px;
+}
+
+ul.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+ul.cards {
+  li {
+    cursor: pointer;
+  }
+
+  li img {
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #fff;
+    max-width: 223px;
+    max-height: 310px;
+    transition: transform 700ms;
+    transform: scale(1);
+  }
+
+  li:hover img {
+    transform: scale(1.08);
+  }
+
+  li div {
+    overflow: hidden;
+    clip-path: inset(0 0 0 0 round 12px);
+  }
+
+  li h3 {
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+  }
+}
+
+.detailsScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.detailsScreen {
+  section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  section img {
+    clip-path: inset(0 0 0 0 round 11px);
+  }
+
+  .detailsText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .detailsText h2 {
+    margin-top: -5px;
+  }
+
+  ul {
+    padding-left: 20px;
+    margin-top: 5px;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  p {
+    display: inline;
+  }
+
+  li span {
+    font-weight: 600;
+  }
+
+  li + li {
+    margin-top: 2px;
+  }
+
+  section.rulingsList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 5px;
+  }
+
+  section.rulingsList li + li {
+    margin-top: 7px;
+  }
 }

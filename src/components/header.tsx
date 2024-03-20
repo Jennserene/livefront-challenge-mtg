@@ -1,24 +1,24 @@
 import backSvg from '../assets/back.svg'
 
-type HeaderProps = {
+interface HeaderProps {
   goHome: () => void
+  notHome: boolean
 }
 
 const Header = (props: HeaderProps) => {
-  const { goHome } = props
+  const { goHome, notHome } = props
 
   const handleClick = () => {
-    console.log('click')
     goHome()
   }
 
   return (
     <header>
       <div className="backContainer">
-        <img src={backSvg} onClick={handleClick} alt="Home button"/>
+        {notHome && <img src={backSvg} onClick={handleClick} alt="Home button" />}
       </div>
       <h1 onClick={handleClick}>
-        Dragon MTG Cards
+        Magic: The Gathering Dragons
       </h1>
       <div className="headerRight" />
     </header>

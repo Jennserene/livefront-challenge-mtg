@@ -8,14 +8,15 @@ interface HeaderProps {
 const Header = (props: HeaderProps) => {
   const { goHome, notHome } = props
 
-  const handleClick = () => {
+  const handleClick = (event) => {
+    event.preventDefault()
     goHome()
   }
 
   return (
     <header>
       <div className="backContainer">
-        {notHome && <a onClick={handleClick}><img src={backSvg} alt="Home button" /></a>}
+        {notHome && <button onClick={handleClick}><img src={backSvg} alt="Home button" /></button>}
       </div>
       <h1>Magic: The Gathering Dragons</h1>
       <div className="headerRight" />

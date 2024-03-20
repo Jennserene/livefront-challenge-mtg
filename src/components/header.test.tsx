@@ -22,10 +22,10 @@ describe('Header', () => {
     expect(backButtonElement).toBeNull()
   })
 
-  it('calls goHome function when header is clicked', () => {
+  it('calls goHome function when back button is clicked', () => {
     const goHomeMock = jest.fn()
     render(<Header goHome={goHomeMock} notHome={true} />)
-    const headerElement = screen.getByRole('heading', { name: title })
+    const headerElement = screen.getByRole('button')
     fireEvent.click(headerElement)
     expect(goHomeMock).toHaveBeenCalledTimes(1)
   })

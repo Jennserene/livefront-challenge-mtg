@@ -14,10 +14,8 @@ const Details = (props: DetailsProps) => {
     window.scrollTo(0, 0)
   }, [])
 
-  const manaCost = card.manaCost.replace(/[{()}]/g, '')
-
   const attributes = {
-    "Mana Cost": manaCost,
+    "Mana Cost": card.manaCost,
     "Converted Mana Cost": card.cmc,
     "Colors": card.colors.join(", "),
     "Color Identity": card.colorIdentity.join(", "),
